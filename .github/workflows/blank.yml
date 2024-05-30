@@ -19,8 +19,8 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --global user.name '神恶魔'
-        git config --global user.email 'github-actions@github.com'
+        git config --global user.name 'ordinary01'
+        git config --global user.email 'jiangdashuai1991@hotmail.com'
         git add target_file.txt
         git commit -m "Append to target file"
         git push
