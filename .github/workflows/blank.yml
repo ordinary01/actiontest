@@ -24,3 +24,5 @@ jobs:
         git add target_file.txt
         git commit -m "Update target file"
         git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/ordinary01/actiontest.git
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
