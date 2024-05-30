@@ -14,15 +14,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Write to file
-      run: echo "${{ github.event.inputs.file_content }}" > target_file.txt
+    - name: Append to file
+      run: echo "${{ github.event.inputs.file_content }}" >> target_file.txt
 
     - name: Commit changes
       run: |
-        git config --global user.name 'github-actions'
+        git config --global user.name '神恶魔'
         git config --global user.email 'github-actions@github.com'
         git add target_file.txt
-        git commit -m "Update target file"
+        git commit -m "Append to target file"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
