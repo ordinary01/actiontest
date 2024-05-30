@@ -1,0 +1,28 @@
+name: Update File
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_content:
+        description: 'Content to write to the file'
+        required: true
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Write to file
+      run: echo "${{ github.event.inputs.file_content }}" > target_file.txt
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add target_file.txt
+        git commit -m "Update target file"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
