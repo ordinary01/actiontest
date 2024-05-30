@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Write to file
-      run: echo "${{ github.event.inputs.file_content }}" > target_file.txt
+      run: echo "${{ github.event.inputs.file_content }}" >> target_file.txt
 
     - name: Commit changes
       run: |
