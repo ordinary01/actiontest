@@ -23,4 +23,4 @@ jobs:
         git config --global user.email 'jiangdashuai1991@hotmail.com'
         git add target_file.txt
         git commit -m "Update target file"
-        git push https://x-access-token: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@github.com/ordinary01/actiontest.git
+        git push https://x-access-token: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@github.com/ordinary01/actiontest.git
